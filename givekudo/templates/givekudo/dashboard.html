@@ -1,0 +1,24 @@
+{% extends "givekudo/base.html" %}
+{% block content %}
+<h4>Personal Kudo Dashboard</h4>
+	<hr>     
+	<table class="table table-striped">
+	    <thead>
+	      <tr>
+	      	<th>Received Kudo From</th>
+	        <th>Kudo Count</th>
+	        <th>Received Date</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for data in dashboard%}
+	    		<tr>
+	    			<td>{{data.from_user}}</td>
+	    			<td>{{data.kudo_count}}</td>
+	    			<td>{{data.date_posted}}</td>
+	        	</tr>
+	       {% endfor %}
+	    </tbody>
+	</table>
+    </hr>
+{% endblock content %}
